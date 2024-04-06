@@ -31,15 +31,16 @@ local function toggle_telescope(harpoon_files)
       finder = make_finder(),
       previewer = conf.file_previewer {},
       sorter = conf.generic_sorter {},
-      attach_mappings = function()
+      attach_mappings = function(prompt_buffer_number)
         map(
           "i",
           "<A-d>", -- your mapping here
           function()
             local state = require "telescope.actions.state"
             local selected_entry = state.get_selected_entry()
-            print(vim.inspect(selected_entry.index))
-            harpoon:list():removeAt(selected_entry.index)
+            local current_picker = state.get_current_picker(prompt_buffer_number)
+            harpoon:list():remove_at(selected_entry.index)
+            current_picker:refresh(make_finder())
           end
         )
 
