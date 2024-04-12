@@ -33,7 +33,9 @@ dofile(vim.g.base46_cache .. "statusline")
 -- load harpoon
 local harpoon = require("harpoon")
 harpoon:setup()
-
+require("presence").setup({
+  main_image = "file",
+})
 require "nvchad.autocmds"
 
 vim.schedule(function()

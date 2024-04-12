@@ -30,6 +30,15 @@ return {
     branch = "harpoon2",
     requires = {{"nvim-lua/plenary.nvim"}, {"nvim-telescope/telescope"}}
   },
+  {
+  "lervag/vimtex",
+  init = function()
+    -- Use init for configuration, don't use the more common "config".
+  end
+  },
+  {
+    "andweeb/presence.nvim"
+  },
   --
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
