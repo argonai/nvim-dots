@@ -37,6 +37,7 @@ require("presence").setup({
   main_image = "file",
 })
 require "nvchad.autocmds"
+vim.opt.relativenumber = true
 
 vim.schedule(function()
   require "mappings"
