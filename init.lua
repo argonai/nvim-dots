@@ -36,6 +36,7 @@ harpoon:setup()
 require("presence").setup({
   main_image = "file",
 })
+require('render-markdown').setup({})
 require "nvchad.autocmds"
 vim.opt.relativenumber = true
 
