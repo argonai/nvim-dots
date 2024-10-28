@@ -36,7 +36,15 @@ harpoon:setup()
 require("presence").setup({
   main_image = "file",
 })
-require('render-markdown').setup({})
+require('render-markdown').setup({
+  latex = {
+    enabled = true,
+    converter = 'utftex',
+    highlight = 'RenderMardownMath',
+    -- top_pad = 1,
+    -- bottom_pad = 1,
+  },
+})
 require "nvchad.autocmds"
 vim.opt.relativenumber = true
 
