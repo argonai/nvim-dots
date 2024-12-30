@@ -28,7 +28,21 @@ require("lazy").setup({
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
-
+-- load harpoon
+local harpoon = require("harpoon")
+harpoon:setup()
+require("presence").setup({
+  main_image = "file",
+})
+require('render-markdown').setup({
+  latex = {
+    enabled = true,
+    converter = 'utftex',
+    highlight = 'RenderMardownMath',
+    -- top_pad = 1,
+    -- bottom_pad = 1,
+  },
+})
 require "options"
 require "nvchad.autocmds"
 
